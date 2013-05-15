@@ -1,2 +1,18 @@
-<h1>Comments#new</h1>
-<p>Find me in app/views/comments/new.html.erb</p>
+<%= form_for [@post, @comment] do |f| %>
+	<p>
+		<%= f.label :author %>
+		<%= f.text_field :author %>
+	</p>
+	<p>
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+	</p>
+	<p>
+		<%= f.label :comment_body %>
+		<%= f.text_field :comment_body %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+	
+<% end %>

@@ -1,4 +1,13 @@
 <h2><%= @post.title %></h2>
 <p><%= strip_tags(@post.body) %></p>
 
+	<% if @comments.any? %>
+		<p><%= @comments.each do |c| %></p>
+		<p><%= c.comment_body %></p>
+		<% end %>
+	<% else %>
+		<p>zatial nikto nekomentoval</p>
+	<% end %>
+
+
 <p><%= link_to "Pridaj koment", new_post_comment_path(@post) %></p>
